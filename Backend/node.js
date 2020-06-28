@@ -1,5 +1,10 @@
 const ObjectID = require('mongodb').ObjectID;
-const express = require('express'); 
+const express = require('express');
+
+const bodyParser = require("body-parser");//To parse body of post requests
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 const app = express(); // instantiate express
 
 // listen for requests on port 4567
@@ -25,62 +30,43 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     //Get Tasks
     app.get("/tasks", (req, res) => {
-    database.collection('Requests').find({ })
-    .toArray((err, result) => {
-      if (err) {
-        // if an error happens
-        res.send("Error in GET req.");
-      } else {
-        // if all works
-        res.send(result); 
-      }
+        database.collection('Requests').find({ })
+        .toArray((err, result) => {
+            if (err) {
+                // if an error happens
+                res.send("Error in GET req.");
+            } else {
+                // if all works
+                res.send(result); 
+            }
+        });
     });
-  });
+    
+    app.post('/',(request,response) => {
+        database.collection('Requests').insert(request.body);
+        response.send("Posting may have worked.")
+    });
+
+    
     
     
     var collection = database.collection('Users');
     
-    // Responds to GET requests with the route parameter being the username.
-  // Returns with the JSON data about the user (if there is a user with that username)
-  // Example request: https://mynodeserver.com/myusername
+   //Get user
   app.get("/:user", (req, res) => {
-    // search the database (collection) for all users with the `user` field being the `user` route paramter
+    // Search for user
     collection.find({ username: req.params.user })
     .toArray((err, result) => {
       if (err) {
-        // if an error happens
         res.send("Error in GET req.");
       } else {
         // if all works
-        res.send(result); // send back all users found with the matching username
+        res.send(result); // Send users with matching username
       }
     });
   });
 
-  // this doesn't create a new user but rather updates an existing one by the user name
-  // a request looks like this: `https://nodeserver.com/username23` plus the associated JSON data sent in
-  // the `body` property of the PUT request
-  // app.put("/:user", (req, res) => {
-  //   collection.find({ user: req.params.user }).toArray((err, docs) => {
-  //     if (err) {
-  //       // if and error occurs in finding a user to update
-  //       res.send("Error in PUT req.");
-  //     } else {
-  //       collection.updateOne(
-  //         {"_id": ObjectID(req.params.id)}, 
-  //         { $set: {"points": req.body.points} }, 
-  //         function(err, doc) {
-  //           if (err) {
-  //             // if error occurs in actually updating the data in the database
-  //             console.log("Error in updating database information");
-  //           } else {
-  //             // everything works! (hopefully)
-  //             res.send("Updated successfully");
-  //           }
-  //         }
-  //       );
-  //     }
-  //   });
+
 
 
   // listen for requests
