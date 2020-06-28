@@ -1,11 +1,11 @@
 const ObjectID = require('mongodb').ObjectID;
 const express = require('express');
+const app = express(); // instantiate express
 
 const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const app = express(); // instantiate express
 
 // listen for requests on port 4567
 const port = 4567;
