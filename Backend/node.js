@@ -5,6 +5,9 @@ const app = express(); // instantiate express
 const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.json());
 
+//Mongoose model
+const Subscriber = require('../models/Task')
+
 
 // listen for requests on port 4567
 const port = 4567;
@@ -42,7 +45,14 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     });
     
     app.post('/',(request,response) => {
-        database.collection('Requests').insert(request.body);
+        var myTask = new Task( {
+            task:req.body.task,
+            date:req.body.date,
+            time:req.body.time
+        })
+        
+        
+        database.collection('Requests').insert(myTask);
         response.send(request.body)
     });
 
