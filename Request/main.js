@@ -3,7 +3,8 @@ var URL = 'http://34.74.78.120:4567';
 function postCard(jsonCard) {
     fetch(URL, {
         method: 'post',
-        body:JSON.stringify(jsonCard)
+        body:JSON.stringify(jsonCard),
+        headers: {"Content-Type" : "application/json"}
     })
     .then(response => response.json())
 }
