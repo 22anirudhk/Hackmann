@@ -48,7 +48,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
             console.log(result);
             console.log('saved to database');
             // send the freshly saved record back to the front-end
-            res.json(result);
+            response.json(result);
         })
     });
 
