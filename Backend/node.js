@@ -42,8 +42,14 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     });
     
     app.post('/',(request,response) => {      
-        database.collection('Requests').insert(myTask);
-        response.send(request.body)
+        database.collection('Requests').insertOne(request.body, (err, result) => {
+             if (err) return console.log(err);
+                // log the result of db insertion
+            console.log(result);
+            console.log('saved to database');
+            // send the freshly saved record back to the front-end
+            res.json(result);
+        })
     });
 
     
