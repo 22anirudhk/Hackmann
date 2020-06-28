@@ -12,7 +12,7 @@ class Card {
 
 
 
-var card = new Card("Gardening", "6/25", "5:00pm", "3");
+var card = new Card("Gardening", "6/25", "5:00pm");
 
 
 
@@ -59,9 +59,20 @@ function addCard(myCard) {
 
 
 function getCards() {
-    
+    document.getElementById("content-div").innerHTML = "";
+    console.log(getURL + "Tasks");
+    var cardsArr = fetch(getURL + "Tasks")
+    .then(response => response.json())
+    .then(json => {
+        
+        for(var i = 0; i < json.length; i++) {
+            //Element in Json array of tasks
+            var el = json[i];
+            var cardVersion = new Card(el.task, el.date, el.time);
+            addCard(cardVersion);
+            console.log(el.task);
+        }
+    })
 }
 
-addCard(card);
-addCard(card);
-addCard(card);
+getCards();
