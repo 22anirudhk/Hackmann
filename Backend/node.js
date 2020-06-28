@@ -44,7 +44,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     app.post('/',(request,response) => {
         database.collection('Requests').insert(request.body);
-        response.send("Posting may have worked.")
+        response.send(request.body)
     });
 
     

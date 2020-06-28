@@ -6,9 +6,6 @@ function postCard(jsonCard) {
         body:JSON.stringify(jsonCard)
     })
     .then(response => response.json())
-    .then(json => {
-        
-    })
 }
 
 function requestHelp() {
