@@ -8,6 +8,8 @@ body {
 /*TOP DIV */
 
 #top-div {
+    position:fixed;
+    z-index:1;
     height:90px;
     width:100%;
     
@@ -30,6 +32,8 @@ body {
 /* Sidebar (automatically z-index under top bar) */
 
 #sidebar {
+    margin-top:170px; /*MAKE SURE ITS SAME AS TOP BAR WIDTH (including padding) */
+    
     height:100%;
     width:350px;
         
@@ -118,12 +122,17 @@ body {
 
 
 #content-div {
+
+    
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-direction:column;
 
-    
-    padding:50px;
+        
+    padding-top:170px; /*MAKE SURE ITS SAME AS TOP BAR WIDTH (including padding) */
+    padding-left:350px; /*MAKE SURE ITS SAME AS Side BAR WIDTH (including padding) */
+
 }
 
 
@@ -175,7 +184,7 @@ input {
     border-radius:20px;
     color:white;
     font-family:Lato;
-    background-color:#6EDD7F;
+    background-color:#30B4FF;
     font-size:20px;
 }
 

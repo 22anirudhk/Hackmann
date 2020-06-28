@@ -21,6 +21,23 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     database = client.db(databaseName);
     
+    
+    
+    //Get Tasks
+    app.get("/tasks", (req, res) => {
+    database.collection('Requests').find({ })
+    .toArray((err, result) => {
+      if (err) {
+        // if an error happens
+        res.send("Error in GET req.");
+      } else {
+        // if all works
+        res.send(result); 
+      }
+    });
+  });
+    
+    
     var collection = database.collection('Users');
     
     // Responds to GET requests with the route parameter being the username.

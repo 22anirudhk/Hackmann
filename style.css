@@ -122,6 +122,8 @@ input {
     height:30px;
     font-size:20px;
     color:gray;
+    
+    font-family:Lato;
 }
 
 .submit-button{
