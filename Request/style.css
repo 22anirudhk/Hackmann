@@ -23,6 +23,7 @@ body {
 #website-name {
     font-size:50px;
     color:white;
+    cursor:pointer;
 }
 
 /*ENDING TOP DIV */
@@ -170,6 +171,9 @@ input {
 }
 
 .submit-button{
+    transition: color 0.5s;
+    cursor:pointer;
+    
     width:200px;
     height:55px;
     border-radius:20px;
@@ -179,3 +183,8 @@ input {
     font-size:20px;
 }
 
+.submit-button:hover {
+    transition: color 0.5s;
+    color:black;
+    background-color:lightgray;
+}

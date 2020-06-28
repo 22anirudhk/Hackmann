@@ -1,5 +1,20 @@
 var URL = 'http://34.74.78.120:4567'; 
 
+
+document.getElementById("side-request-button").addEventListener("click", function() {
+    window.location.href = "../Request/index.html";
+});
+
+document.getElementById("volunteer-button").addEventListener("click", function() {
+    window.location.href = "../Volunteer/index.html";
+});
+
+document.getElementById("website-name").addEventListener("click", function(){
+    window.location.href = "../index.html";
+});
+
+
+
 function postCard(jsonCard) {
     fetch(URL, {
         method: 'post',
@@ -25,6 +40,10 @@ function requestHelp() {
     }
     console.log(JSONVersion);
     postCard(JSONVersion);
+
+    var requestedNode = document.createElement("h3");
+    requestedNode.innerHTML = "Requested. Return to the volunteer page to verify."
+    document.getElementById("request-div").appendChild(requestedNode);
 }
 
 document.getElementById("request-button").addEventListener("click", requestHelp);

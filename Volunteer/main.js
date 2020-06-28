@@ -9,11 +9,21 @@ class Card {
     }
 }
 
+document.getElementById("website-name").addEventListener("click", function(){
+    window.location.href = "../index.html";
+});
 
+
+document.getElementById("request-button").addEventListener("click", function() {
+    window.location.href = "../Request/index.html";
+});
+
+document.getElementById("volunteer-button").addEventListener("click", function() {
+    window.location.href = "../Volunteer/index.html";
+});
 
 
 var card = new Card("Gardening", "6/25", "5:00pm");
-
 
 
 function addCard(myCard) {
@@ -35,8 +45,10 @@ function addCard(myCard) {
         table.appendChild(row1);
     
         var col1 = document.createElement("td");
+        
         var val1 = document.createElement("h4");
         val1.innerHTML = items[i];
+        val1.style.color = "black";
         col1.appendChild(val1);
         row1.appendChild(col1);
     
