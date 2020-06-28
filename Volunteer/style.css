@@ -1,0 +1,181 @@
+body {
+    width:100%;
+    height:100%;
+    font-family: "Lato";
+    margin:0px;
+}
+
+/*TOP DIV */
+
+#top-div {
+    height:90px;
+    width:100%;
+    
+    background-color:#5F01E8;
+    
+    padding:40px;
+}
+
+#website-name-div {
+    display:flex;
+}
+
+#website-name {
+    font-size:50px;
+    color:white;
+}
+
+/*ENDING TOP DIV */
+
+/* Sidebar (automatically z-index under top bar) */
+
+#sidebar {
+    height:100%;
+    width:350px;
+        
+    background-color:#DFDFDF;
+    padding:30px;
+    
+    position:fixed;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#sidebar-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#profile-div {
+    
+    background-color:darkgray;
+    
+    width:100%;
+    border-radius:10px;
+    padding:10px;
+        
+    
+    display:flex;
+    align-items:flex-end;
+    flex-direction:column;
+    
+    margin-bottom:225px;
+}
+
+#sidebar input {
+    background-color:#AD96CE;
+    margin:20px;
+}
+
+/* Ending Sidebar */
+
+/* Message Div */
+
+#message-div {
+    margin-top:25px;
+    display:flex;
+    width:100%;
+    
+    justify-content:center;
+}
+
+#message{
+    font-weight:500;
+}
+
+/* Ending Message Div */
+
+
+.card {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    
+    width:700px;
+    height:max-content;
+    
+    margin:50px;
+    
+    color:#D1CCCC; /*Light gray*/
+    
+    border-color:black;
+    border-width:2px;
+    border-radius:20px;
+    
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top:20px;
+    padding-bottom:30px;
+    
+    font-size:24px;
+}
+
+
+
+#content-div {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    
+    padding:50px;
+}
+
+
+/* Sign Up Div */
+
+#sign-up-div {
+    
+}
+
+#sign-up {
+    font-size:30px;
+    color:black;
+    font-weight:400;
+}
+
+/* Ending Sign Up Div */
+
+
+/* Sign In Div */
+
+#sign-in-div {
+    
+}
+
+/* Ending Sign In Div */
+
+
+
+
+/*        */
+div {
+    border: solid;
+    border-width:0px;
+}
+
+input {
+    width:300px;
+    border-radius:20px;
+    background-color:#F5F5F5;
+    border-width:0px;
+    height:30px;
+    font-size:20px;
+    color:gray;
+}
+
+.submit-button{
+    width:200px;
+    height:55px;
+    border-radius:20px;
+    color:white;
+    font-family:Lato;
+    background-color:#6EDD7F;
+    font-size:20px;
+}
+
