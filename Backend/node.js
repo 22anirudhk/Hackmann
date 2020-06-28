@@ -3,7 +3,6 @@ const express = require('express');
 const app = express(); // instantiate express
 
 const bodyParser = require("body-parser");//To parse body of post requests
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
