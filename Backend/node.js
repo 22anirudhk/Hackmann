@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.json());
 
 //Mongoose model
-const Subscriber = require('../models/Task')
+const Subscriber = require('task')
 
 
 // listen for requests on port 4567
