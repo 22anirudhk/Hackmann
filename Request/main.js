@@ -1,4 +1,4 @@
-var URL = 'http://34.74.78.120:4567'; 
+var URL = 'https://34.74.78.120:4567'; 
 
 
 document.getElementById("side-request-button").addEventListener("click", function() {
