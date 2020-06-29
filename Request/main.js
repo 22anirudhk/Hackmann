@@ -1,4 +1,4 @@
-var URL = 'http://35.190.170.196:4567/'; 
+var URL = 'https://35.190.170.196:4567/'; 
 
 
 document.getElementById("request-page-button").addEventListener("click", function() {
