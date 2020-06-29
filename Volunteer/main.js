@@ -1,4 +1,4 @@
-var getURL = 'http://34.74.78.120:4567/'; 
+var getURL = 'http://35.190.170.196:4567/'; 
 
 
 class Card {
