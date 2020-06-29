@@ -51,7 +51,7 @@ function signup() {
         headers: {"Content-Type" : "application/json"}
     })
     .then(response => response.json())
-//    window.location.href = "Volunteer/index.html";
+    window.location.href = "Volunteer/index.html";
 }
 
 document.getElementById("sign-up-button").addEventListener("click", signup);
