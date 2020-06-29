@@ -16,8 +16,8 @@ const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.json());
 
 const server = https.createServer({
-  key: fs.readFileSync('../website-test.key'),
-  cert: fs.readFileSync('../website-test.cert')
+  key: fs.readFileSync('../server.key'),
+  cert: fs.readFileSync('../server.cert')
 }, app)
 .listen(port, function () {
   console.log('Example app listening on port ' + port);
