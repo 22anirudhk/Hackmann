@@ -4,10 +4,18 @@ function login() {
     var username = document.getElementById("sign-in-username").value;
     var password = document.getElementById("sign-in-password").value;
     
-    if(username == "test" && password == "hack") {
-        localStorage["username"] = username;
-        window.location.href = "Volunteer/index.html";
-    }
+    var cardsArr = fetch(URL + username)
+    .then(response => response.json())
+    .then(json => {
+        if(json.length != 0 && username == json[0].username && password == json[0].password) {
+            localStorage["username"] = username;
+            localStorage["name"] = json[0].name;
+            localStorage["location"] = json[0].location;
+            window.location.href = "Volunteer/index.html";
+        }
+    })
+    
+    
 }
 document.getElementById("sign-in").addEventListener("click", login);
 
@@ -18,20 +26,26 @@ document.getElementById("website-name").addEventListener("click", function(){
 
 function signup() {
     var username = document.getElementById("username").value;
+    
+    
     localStorage["username"] = username;
     
     var name = document.getElementById("name").value;
-    var city = document.getElementById("city").value;
+    var location = document.getElementById("location").value;
     var password = document.getElementById("password").value;
     
     jsonCard = {
         username: username,
         password: password,
-        city:city,
+        location:location,
         name:name
     }
     
-    fetch(URL + "Users", {
+    localStorage["username"] = username;
+    localStorage["name"] = name;
+    localStorage["location"] = location;
+    
+    fetch(URL + "Users/", {
         method: 'post',
         body:JSON.stringify(jsonCard),
         headers: {"Content-Type" : "application/json"}

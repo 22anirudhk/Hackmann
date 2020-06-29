@@ -16,7 +16,8 @@ body {
     height:90px;
     width:100%;
     
-    background-color:#5F01E8;
+    background: rgb(95,1,232);
+    background: linear-gradient(90deg, rgba(95,1,232,1) 0%, rgba(95,1,232,1) 47%, rgba(0,212,255,1) 100%);
     
     padding:40px;
 }
