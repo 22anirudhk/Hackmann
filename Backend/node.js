@@ -97,10 +97,11 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
         }
         });
     });
+
+});
     
   // listen for requests
   var listener = app.listen(port, () => {
     console.log("Your app is listening on port " + listener.address().port);
   });
-});
 //server.listen(port, () => { console.log('listening on ' + port) });
