@@ -57,7 +57,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     });
 
     
-    app.post('/',(request,response) => {      
+    app.post('/Requests',(request,response) => {      
         database.collection('Requests').insertOne(request.body, (err, result) => {
              if (err) return console.log(err);
                 // log the result of db insertion
