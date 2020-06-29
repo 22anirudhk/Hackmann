@@ -116,8 +116,8 @@ function addCard(myCard) {
 
 function getCards() {
     document.getElementById("content-div").innerHTML = "";
-    console.log(getURL + "Tasks");
-    var cardsArr = fetch(getURL + "Tasks")
+    console.log(URL + "Tasks");
+    var cardsArr = fetch(URL + "Tasks")
     .then(response => response.json())
     .then(json => {
         
