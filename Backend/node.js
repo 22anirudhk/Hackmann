@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 
 //For https
 const fs = require('fs');
-const key = fs.readFileSync('./key.pem');
-const cert = fs.readFileSync('./cert.pem');
+const key = fs.readFileSync('../key.pem');
+const cert = fs.readFileSync('../cert.pem');
 const https = require('https');
 const server = https.createServer({key: key, cert: cert }, app);
 
