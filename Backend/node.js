@@ -14,7 +14,7 @@ app.use(require('body-parser').json()) // When someone sends something to the se
 
 const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.json());
-//
+
 //const server = https.createServer({
 //  key: fs.readFileSync('server.key'),
 //  cert: fs.readFileSync('server.cert')
@@ -40,11 +40,6 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     
     database = client.db(databaseName);
-    
-
-    app.get("/", (req, res) => {
-      res.render("index.html");
-    })
     
     
     //Get Tasks
