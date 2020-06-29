@@ -1,0 +1,25 @@
+{
+  "name": "kommunity",
+  "version": "1.0.0",
+  "description": "Check out my submission to the Hackmann hackathon at https://devpost.com/software/kommunity-9zwgya",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/22anirudhk/Hackmann.git"
+  },
+  "author": "22anirudhk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/22anirudhk/Hackmann/issues"
+  },
+  "homepage": "https://github.com/22anirudhk/Hackmann#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "node": "^14.4.0"
+  }
+}
