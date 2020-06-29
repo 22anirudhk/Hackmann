@@ -98,7 +98,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
   });
 
 
-    server.listen(port, () => { console.log('listening on 3001') });
+    server.listen(port, () => { console.log('listening on ' + port) });
 
 
 //  // listen for requests
