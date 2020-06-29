@@ -16,7 +16,7 @@ document.getElementById("website-name").addEventListener("click", function(){
 
 
 function postCard(jsonCard) {
-    fetch(URL, {
+    fetch(URL + "Requests", {
         method: 'post',
         body:JSON.stringify(jsonCard),
         headers: {"Content-Type" : "application/json"}
