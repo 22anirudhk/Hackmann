@@ -1,7 +1,7 @@
 var URL = 'http://34.74.78.120:4567/'; 
 
 
-document.getElementById("side-request-button").addEventListener("click", function() {
+document.getElementById("request-page-button").addEventListener("click", function() {
     window.location.href = "../Request/index.html";
 });
 
@@ -12,6 +12,8 @@ document.getElementById("volunteer-button").addEventListener("click", function()
 document.getElementById("website-name").addEventListener("click", function(){
     window.location.href = "../index.html";
 });
+
+document.getElementById("name").innerHTML = localStorage["name"];
 
 
 
@@ -32,14 +34,15 @@ function requestHelp() {
     
     var username = localStorage["username"];
     
+    console.log("Fetching from " + URL + username);
     
-    var cardsArr = fetch(URL + username);
+    var cardsArr = fetch(URL + username)
     .then(response => response.json())
     .then(json => {
     
     
     
-    
+    console.log(json);
     if(taskStr == null || dateStr == null || timeStr == null) {
         return;
     }
@@ -48,8 +51,8 @@ function requestHelp() {
         task: taskStr,
         date: dateStr,
         time: timeStr,
-        location: json[0].location,
-        name: json[0].name
+        location: localStorage["location"],
+        name: localStorage["name"]
     }
     console.log(JSONVersion);
     postCard(JSONVersion);

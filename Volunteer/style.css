@@ -17,7 +17,8 @@ body {
     height:90px;
     width:100%;
     
-    background-color:#5F01E8;
+    background: rgb(95,1,232);
+    background: linear-gradient(90deg, rgba(95,1,232,1) 0%, rgba(95,1,232,1) 47%, rgba(0,212,255,1) 100%);
     
     padding:40px;
     
@@ -29,7 +30,6 @@ body {
 
 #website-name-div {
     display:flex;
-    position:absolute;
 }
 
 #website-name {
@@ -69,21 +69,7 @@ body {
 
 
 
-/* Message Div */
 
-#message-div {
-    margin-top:25px;
-    display:flex;
-    width:100%;
-    
-    justify-content:center;
-}
-
-#message{
-    font-weight:500;
-}
-
-/* Ending Message Div */
 
 
 .card {

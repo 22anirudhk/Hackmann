@@ -22,6 +22,7 @@ document.getElementById("volunteer-button").addEventListener("click", function()
     window.location.href = "../Volunteer/index.html";
 });
 
+document.getElementById("name").innerHTML = localStorage["name"];
 
 var card = new Card("Gardening", "6/25", "5:00pm");
 
