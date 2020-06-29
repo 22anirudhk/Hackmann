@@ -28,10 +28,6 @@ var card = new Card("Gardening", "6/25", "5:00pm");
 
 function addCard(myCard) {
     
-    var items = ["Task", "Date", "Time"];
-    var attr = [myCard.task, myCard.date, myCard.time, myCard.length];
-    
-    
     var cardEl = document.createElement("div")
     cardEl.classList.add("card");
     
@@ -39,32 +35,79 @@ function addCard(myCard) {
     cardEl.appendChild(table);
     
     
-    for(var i = 0; i < items.length; i++) {
+    var rows = [];
+    var columns = [];
+    
+    var column1 = [];
+    var column2 = [];
+    var column3 = [];
+    
+    columns.push(column1);
+    columns.push(column2);
+    columns.push(column3);
+    console.log(columns);
+    
+    for(var i = 0; i < 4; i++) {
 
-        var row1 = document.createElement("tr");
-        table.appendChild(row1);
-    
-        var col1 = document.createElement("td");
+        var row = document.createElement("tr");
+        table.appendChild(row);
+        rows.push(row);
         
-        var val1 = document.createElement("h4");
-        val1.innerHTML = items[i];
-        val1.style.color = "black";
-        col1.appendChild(val1);
-        row1.appendChild(col1);
-    
-        var col2 = document.createElement("td");
-        var val2 = document.createElement("h4");
-        val2.innerHTML = attr[i];
-        col2.appendChild(val2);
-        row1.appendChild(col2);
-    
+       for(var  j = 0; j < 3; j++) {
+           var col = document.createElement("td");
+           row.appendChild(col);
+           var column = columns[j];
+           column.push(col);
+       }
     }
     
+    
+    //First column items
+    var task = document.createElement("h4");
+    task.innerHTML = myCard.task;
+    task.style.color = "black";
+    task.style.fontSize = "30px";
+    column1[0].appendChild(task);
+    
+    var location = document.createElement("h4");
+    location.innerHTML = myCard.location;
+    column1[1].appendChild(location);
+    
+    var time = document.createElement("h4");
+    time.innerHTML = myCard.time;
+    column1[3].appendChild(time);
+    
+    //Second column item
     var acceptButton = document.createElement("input");
     acceptButton.setAttribute("type", "submit");
     acceptButton.setAttribute("value", "Accept");
     acceptButton.setAttribute("class", "submit-button");
-    cardEl.appendChild(acceptButton);
+    column2[2].appendChild(acceptButton);
+    
+    
+    //Third column items
+    var name = document.createElement("h4");
+    name.innerHTML = myCard.name;
+    column3[0].appendChild(name);
+    
+    var date = document.createElement("h4");
+    date.innerHTML = myCard.date;
+    column3[3].appendChild(date);
+    
+    
+    
+//    var col1 = document.createElement("td");      
+//        var val1 = document.createElement("h4");
+//        val1.innerHTML = attr[i];
+//        val1.style.color = "black";
+//        col1.appendChild(val1);
+//        row.appendChild(col1);
+    
+    
+        
+    
+    
+
     
     document.getElementById("content-div").appendChild(cardEl);
 }
@@ -80,8 +123,7 @@ function getCards() {
         for(var i = 0; i < json.length; i++) {
             //Element in Json array of tasks
             var el = json[i];
-            var cardVersion = new Card(el.task, el.date, el.time);
-            addCard(cardVersion);
+            addCard(el);
             console.log(el.task);
         }
     })

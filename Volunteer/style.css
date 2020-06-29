@@ -20,10 +20,16 @@ body {
     background-color:#5F01E8;
     
     padding:40px;
+    
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    
 }
 
 #website-name-div {
     display:flex;
+    position:absolute;
 }
 
 #website-name {
@@ -32,55 +38,36 @@ body {
     cursor:pointer;
 }
 
-/*ENDING TOP DIV */
-
-/* Sidebar (automatically z-index under top bar) */
-
-#sidebar {
-    margin-top:170px; /*MAKE SURE ITS SAME AS TOP BAR WIDTH (including padding) */
-    
-    height:100%;
-    width:350px;
-        
-    background-color:#DFDFDF;
-    padding:30px;
-    
-    position:fixed;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-
-#sidebar-buttons{
+#function-buttons{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     align-items:center;
+    margin-left:auto;
+    margin-right:auto;
 }
+
 
 #profile-div {
     
     background-color:darkgray;
     
-    width:100%;
+    width:max-content;
+    height:min-content;
+    max-height:90px;
+    
+    
     border-radius:10px;
-    padding:10px;
+    padding:30px;
+    
+    margin-right:50px;
+    
         
     
     display:flex;
-    align-items:flex-end;
     flex-direction:column;
-    
-    margin-bottom:225px;
 }
 
-#sidebar input {
-    background-color:#AD96CE;
-    margin:20px;
-}
 
-/* Ending Sidebar */
 
 /* Message Div */
 
@@ -101,11 +88,11 @@ body {
 
 .card {
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content:center;
     align-items:center;
     
-    width:700px;
+    width:max-content;
     height:max-content;
     
     margin:50px;
@@ -127,42 +114,15 @@ body {
 
 
 #content-div {
-
-    
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-direction:column;
+    flex-wrap:wrap;
+    
 
         
     padding-top:170px; /*MAKE SURE ITS SAME AS TOP BAR WIDTH (including padding) */
-    padding-left:350px; /*MAKE SURE ITS SAME AS Side BAR WIDTH (including padding) */
-
 }
-
-
-/* Sign Up Div */
-
-#sign-up-div {
-    
-}
-
-#sign-up {
-    font-size:30px;
-    color:black;
-    font-weight:400;
-}
-
-/* Ending Sign Up Div */
-
-
-/* Sign In Div */
-
-#sign-in-div {
-    
-}
-
-/* Ending Sign In Div */
 
 
 
@@ -184,7 +144,7 @@ input {
     color:gray;
 }
 
-.submit-button{
+.submit-button {
     transition: color 0.5s;
     cursor:pointer;
     
@@ -204,3 +164,7 @@ input {
 }
 
 
+.page-button {
+    background-color:#AD96CE;
+    margin:60px;
+}

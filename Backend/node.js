@@ -25,6 +25,10 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     database = client.db(databaseName);
     
+
+    app.get("/", (req, res) => {
+      res.render("index.html");
+    })
     
     
     //Get Tasks
@@ -40,6 +44,18 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
             }
         });
     });
+    
+    app.post('/Users',(request,response) => {      
+        database.collection('Users').insertOne(request.body, (err, result) => {
+             if (err) return console.log(err);
+                // log the result of db insertion
+            console.log(request.body);
+            console.log('saved to database');
+            // send the freshly saved record back to the front-end
+            response.json(result);
+        })
+    });
+
     
     app.post('/',(request,response) => {      
         database.collection('Requests').insertOne(request.body, (err, result) => {
