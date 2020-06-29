@@ -11,6 +11,8 @@ const fs = require('fs');
 const key = fs.readFileSync('../key.pem');
 const cert = fs.readFileSync('../cert.pem');
 const https = require('https');
+
+
 const server = https.createServer({key: key, cert: cert }, app);
 
 
@@ -28,6 +30,9 @@ var mongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://127.0.0.1:27017'; //Keep like this
 var databaseName = 'Hackmann';
 var database;
+
+server.listen(port, () => { console.log('listening on ' + port) });
+
     
 //Connect the client using the url & client
 mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
@@ -95,11 +100,6 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
       }
     });
   });
-
-
-    server.listen(port, () => { console.log('listening on ' + port) });
-
-
 //  // listen for requests
 //  var listener = app.listen(port, () => {
 //    console.log("Your app is listening on port " + listener.address().port);
