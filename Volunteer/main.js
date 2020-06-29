@@ -1,4 +1,4 @@
-var URL = 'https://35.190.170.196:4567/'; 
+var getURL = 'https://34.74.78.120:4567/'; 
 
 
 class Card {
@@ -116,8 +116,8 @@ function addCard(myCard) {
 
 function getCards() {
     document.getElementById("content-div").innerHTML = "";
-    console.log(URL + "Tasks");
-    var cardsArr = fetch(URL + "Tasks")
+    console.log(getURL + "Tasks");
+    var cardsArr = fetch(getURL + "Tasks")
     .then(response => response.json())
     .then(json => {
         
