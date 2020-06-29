@@ -6,6 +6,16 @@ const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.json());
 
 
+//For https
+const fs = require('fs');
+const key = fs.readFileSync('./key.pem');
+const cert = fs.readFileSync('./cert.pem');
+const https = require('https');
+const server = https.createServer({key: key, cert: cert }, app);
+
+
+
+
 // listen for requests on port 4567
 const port = 4567;
 
@@ -88,10 +98,11 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
   });
 
 
+    server.listen(port, () => { console.log('listening on 3001') });
 
 
-  // listen for requests
-  var listener = app.listen(port, () => {
-    console.log("Your app is listening on port " + listener.address().port);
-  });
+//  // listen for requests
+//  var listener = app.listen(port, () => {
+//    console.log("Your app is listening on port " + listener.address().port);
+//  });
 });
