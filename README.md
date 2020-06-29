@@ -4,8 +4,11 @@ Check out my submission to the Hackmann hackathon at https://devpost.com/softwar
 ## What It Does
 Kommunity allows individuals to volunteer to accept requests for help in completing a task. This could range from picking up groceries, carrying furniture, to gardening--the potential is unlimited.
 
-## How I Built It
+<img src = "https://github.com/22anirudhk/Kommunity/blob/master/Images/Landing.png">
+<img src = "https://github.com/22anirudhk/Kommunity/blob/master/Images/Volunteer.png">
+<img src = "https://github.com/22anirudhk/Kommunity/blob/master/Images/Request.png">
 
+## How I Built It
 I first set up a virtual machine on Google Cloud. After configuring some parameters, I also set up a MongoDB server on that virtual machine. It stores the tasks to complete as well as user information.
 
 I then developed the front end on my own computer. There are three pages:
