@@ -1,4 +1,4 @@
-var getURL = 'http://localhost:3000/api/vercel.js'; 
+var getURL = 'http://localhost:3000/'; 
 
 
 class Card {
