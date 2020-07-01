@@ -1,16 +1,8 @@
+const express = require("express");
+const router = express.Router();
+
+
 const ObjectID = require('mongodb').ObjectID;
-
-
-const express = require('express');
-var fs = require('fs')
-var https = require('https')
-
-var app = express()
-app.use(require("cors")()) // allow Cross-domain requests 
-app.use(require('body-parser').json()) // When someone sends something to the server, we can recieve it in JSON format
-
-const bodyParser = require("body-parser");//To parse body of post requests
-app.use(bodyParser.json());
 
 
 
@@ -25,11 +17,12 @@ var database;
 mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     
+    
     database = client.db(databaseName);
     
     
     //Get Tasks
-    app.get("/tasks", (req, res) => {
+    router.get("/tasks", (req, res) => {
         database.collection('Requests').find({ })
         .toArray((err, result) => {
             if (err) {
@@ -42,7 +35,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
         });
     });
     
-    app.post('/Users',(request,response) => {      
+    router.post('/Users',(request,response) => {      
         database.collection('Users').insertOne(request.body, (err, result) => {
              if (err) return console.log(err);
                 // log the result of db insertion
@@ -54,7 +47,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     });
 
     
-    app.post('/Requests',(request,response) => {      
+    router.post('/Requests',(request,response) => {      
         database.collection('Requests').insertOne(request.body, (err, result) => {
              if (err) return console.log(err);
                 // log the result of db insertion
@@ -71,7 +64,7 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     var collection = database.collection('Users');
     
     //Get user
-    app.get("/:user", (req, res) => {
+    router.get("/:user", (req, res) => {
         // Search for user
         collection.find({ username: req.params.user })
         .toArray((err, result) => {
