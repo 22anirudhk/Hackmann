@@ -1,4 +1,4 @@
-var URL = 'http://localhost:3000/'; 
+var URL = "https://kommunity.vercel.app/api/vercel.js/";
 
 document.getElementById("request-page-button").addEventListener("click", function() {
     window.location.href = "../Request/index.html";
