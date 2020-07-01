@@ -1,4 +1,4 @@
-var getURL = 'http://localhost:3000/'; 
+var getURL = "https://kommunity.vercel.app/api/vercel.js/";
 
 
 class Card {
