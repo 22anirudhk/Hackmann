@@ -22,8 +22,8 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     
     
     //Get Tasks
-    router.get("/tasks", (req, res) => {
-        database.collection('Requests').find({ })
+    router.get("/Tasks", (req, res) => {
+        database.collection('Tasks').find({ })
         .toArray((err, result) => {
             if (err) {
                 // if an error happens
@@ -47,8 +47,8 @@ mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     });
 
     
-    router.post('/Requests',(request,response) => {      
-        database.collection('Requests').insertOne(request.body, (err, result) => {
+    router.post('/Tasks',(request,response) => {      
+        database.collection('Tasks').insertOne(request.body, (err, result) => {
              if (err) return console.log(err);
                 // log the result of db insertion
             console.log(request.body);
