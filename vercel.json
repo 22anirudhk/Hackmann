@@ -2,7 +2,7 @@
   "name": "Kommunity",
   "version": 2,
   "env": {
-    "MONGODB_URI": "mongodb+srv://akotamraju:Malgudi5@kommunity.lxchi.mongodb.net/Kommunity?retryWrites=true&w=majority"
+    "MONGODB_URI": "@my_mongodb_uri"
   }
 
 }
