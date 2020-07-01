@@ -1,5 +1,4 @@
-var URL = 'https://34.74.78.120:4567/'; 
-
+var URL = 'http://localhost:3000/api/vercel.js'; 
 
 document.getElementById("request-page-button").addEventListener("click", function() {
     window.location.href = "../Request/index.html";
