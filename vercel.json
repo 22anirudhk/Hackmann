@@ -3,6 +3,6 @@
   "version": 2,
   "env": {
     "MONGODB_URI": "mongodb+srv://akotamraju:Malgudi5@kommunity.lxchi.mongodb.net/Kommunity?retryWrites=true&w=majority"
-  },
+  }
 
 }
