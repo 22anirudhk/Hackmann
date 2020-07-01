@@ -4,11 +4,5 @@
   "env": {
     "MONGODB_URI": "mongodb+srv://akotamraju:Malgudi5@kommunity.lxchi.mongodb.net/Kommunity?retryWrites=true&w=majority"
   },
-  "builds": [
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "*.css", "use": "@vercel/static" },
-    { "src": "*.js", "use": "@vercel/static" },
-    { "src": "*.py", "use": "@vercel/python" },
-    { "src": "*.js", "use": "@vercel/node" }
-  ]
+
 }
