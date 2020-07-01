@@ -6,7 +6,6 @@
   },
   "builds": [
     { "src": "*.html", "use": "@vercel/static" },
-    { "src": "*.css", "use": "@vercel/css" },  
     { "src": "*.py", "use": "@vercel/python" },
     { "src": "*.js", "use": "@vercel/node" }
   ]
