@@ -1,4 +1,4 @@
-var URL = 'https://34.74.78.120:4567/'; 
+var URL = 'http://localhost:3000/api/vercel.js'; 
 
 function login() {
     var username = document.getElementById("sign-in-username").value;
