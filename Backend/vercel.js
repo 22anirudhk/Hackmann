@@ -1,8 +1,5 @@
 const ObjectID = require('mongodb').ObjectID;
 
-// listen for requests on port 4567
-const port = 4567;
-
 
 const express = require('express');
 var fs = require('fs')
@@ -15,23 +12,12 @@ app.use(require('body-parser').json()) // When someone sends something to the se
 const bodyParser = require("body-parser");//To parse body of post requests
 app.use(bodyParser.json());
 
-const server = https.createServer({
-  key: fs.readFileSync('../server.key'),
-  cert: fs.readFileSync('../server.cert')
-}, app)
-.listen(port, function () {
-  console.log('Example app listening on port ' + port);
-})
-
-
-
-
 
 
 //Require mongodb and import a MongoClient object;
 var mongoClient = require('mongodb').MongoClient;
 var url = process.env.MONGODB_URI; //Keep like this
-var databaseName = 'Hackmann';
+var databaseName = 'Kommunity';
 var database;
 
 
