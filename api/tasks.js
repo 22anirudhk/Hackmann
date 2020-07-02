@@ -9,7 +9,7 @@ async function connectDatabase(uri) {
         return cacheDB;
     }
     
-    var client = await MongoClient.connect(uri);
+    var client = await MongoClient.connect(uri, { useUnifiedTopology: true });
     var db = await client.db(url.parse(uri).pathname.substr(1));
     
     cacheDB = db;
@@ -23,4 +23,3 @@ module.exports = async (req, res) => {
     var tasks = await myCollection.find({ }).toArray();
     res.status(200).json({ tasks });
 }
-

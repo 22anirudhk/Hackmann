@@ -5,21 +5,37 @@ function login() {
     var username = document.getElementById("sign-in-username").value;
     var password = document.getElementById("sign-in-password").value;
     
-    var cardsArr = fetch(getUsersURL + "?" + "user=" + username)
+    passCard = {
+        username: username,
+        password: password
+    }
     
-    .then(response => response.json())
-    .then(json => {
-        console.log(json);
-        if(json.length != 0 && username == json[0].username && password == json[0].password) {
-            localStorage["username"] = username;
-            localStorage["name"] = json[0].name;
-            localStorage["location"] = json[0].location;
+    fetch(getUsersURL, {
+        method: 'post',
+        body:JSON.stringify(passCard),
+        headers: {"Content-Type" : "application/json"}
+    })
+    .then(r =>  r.json().then(data => ({status: r.status, body: data})))
+    .then((obj) => {
+        console.log(obj)
+        if(obj.status == 200) {
+            localStorage["username"] = obj.body.username;
+            localStorage["name"] = obj.body.name;
+            localStorage["location"] = obj.body.location;
             window.location.href = "Volunteer/index.html";
         }
     })
-    
-    
+    .catch((error) => {
+        var invalidLogin = document.getElementById("invalid-login");
+            if(invalidLogin == null) {
+                var newChild = document.createElement("h4");
+                newChild.innerHTML = "Invalid Login";
+                newChild.style.color = "red";
+                document.getElementById("sign-in-div").appendChild(newChild);
+            }
+    });
 }
+
 document.getElementById("sign-in").addEventListener("click", login);
 
 
