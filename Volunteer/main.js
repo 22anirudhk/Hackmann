@@ -1,4 +1,4 @@
-var getTasksURL = "../api/tasks.js";
+var getTasksURL = "/api/tasks.js";
 
 
 class Card {
