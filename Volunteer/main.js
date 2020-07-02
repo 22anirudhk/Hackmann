@@ -1,4 +1,4 @@
-var getURL = "GOOGLE CLOUD URL";
+var getTasksURL = "kommunity.vercel.app/api/tasks.js";
 
 
 class Card {
@@ -116,8 +116,8 @@ function addCard(myCard) {
 
 function getCards() {
     document.getElementById("content-div").innerHTML = "";
-    console.log(getURL + "Tasks");
-    var cardsArr = fetch(getURL + "Tasks")
+    console.log(postTasksURL);
+    var cardsArr = fetch(postTasksURL)
     .then(response => response.json())
     .then(json => {
         

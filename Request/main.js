@@ -1,4 +1,6 @@
-var URL = "GOOGLE CLOUD URL";
+var postTasksURL = "kommunity.vercel.app/api/post-tasks.js";
+var getUsersURL = "kommunity.vercel.app/api/users.js";
+
 
 document.getElementById("request-page-button").addEventListener("click", function() {
     window.location.href = "../Request/index.html";
@@ -17,7 +19,7 @@ document.getElementById("name").innerHTML = localStorage["name"];
 
 
 function postCard(jsonCard) {
-    fetch(URL + "Requests", {
+    fetch(postTasksURL, {
         method: 'post',
         body:JSON.stringify(jsonCard),
         headers: {"Content-Type" : "application/json"}
@@ -33,9 +35,12 @@ function requestHelp() {
     
     var username = localStorage["username"];
     
-    console.log("Fetching from " + URL + username);
+    console.log("Fetching from " + getUsersURL + username);
     
-    var cardsArr = fetch(URL + username)
+    fetch(getUsersURL, {
+        method: 'get',
+        body:JSON.stringify(username)
+    })
     .then(response => response.json())
     .then(json => {
     
