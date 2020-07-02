@@ -5,12 +5,11 @@ function login() {
     var username = document.getElementById("sign-in-username").value;
     var password = document.getElementById("sign-in-password").value;
     
-    var cardsArr = fetch(getUsersURL, {
-        method: 'get',
-        body:JSON.stringify(username)
-    })
+    var cardsArr = fetch(getUsersURL + "?" + "user=" + username)
+    
     .then(response => response.json())
     .then(json => {
+        console.log(json);
         if(json.length != 0 && username == json[0].username && password == json[0].password) {
             localStorage["username"] = username;
             localStorage["name"] = json[0].name;

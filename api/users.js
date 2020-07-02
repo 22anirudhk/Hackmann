@@ -19,8 +19,13 @@ async function connectDatabase(uri) {
 module.exports = async (req, res) => {
     var myDb = await connectDatabase(process.env.MONGODB_URI);
     var myCollection = await myDb.collection("Users");
+    for(key in req) {
+        if(req.hasOwnProperty(key)) {
+        var value = req[key];
+        console.log(key + ": " + value);
+    }
+}
     
-    var users = await myCollection.find({username: req.body.user }).toArray();
-    res.status(200).json({ users });
+    var users = await myCollection.find({username: req.params.user }).toArray();
 }
 
