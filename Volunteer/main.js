@@ -1,4 +1,4 @@
-var getTasksURL = "/https://kommunity.vercel.app/api/tasks.js";
+var getTasksURL = "/api/tasks.js";
 
 
 class Card {
