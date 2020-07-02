@@ -1,4 +1,4 @@
-var URL = "https://kommunity.vercel.app/api/vercel.js/";
+var URL = "GOOGLE CLOUD URL";
 
 function login() {
     var username = document.getElementById("sign-in-username").value;

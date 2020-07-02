@@ -1,4 +1,4 @@
-var URL = "https://kommunity.vercel.app/api/vercel.js/";
+var URL = "GOOGLE CLOUD URL";
 
 document.getElementById("request-page-button").addEventListener("click", function() {
     window.location.href = "../Request/index.html";
