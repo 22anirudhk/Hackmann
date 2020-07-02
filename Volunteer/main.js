@@ -123,7 +123,7 @@ function getCards() {
         
         for(var i = 0; i < json.length; i++) {
             //Element in Json array of tasks
-            var el = json[i];
+            var el = json.tasks[i];
             addCard(el);
             console.log(el.task);
         }
