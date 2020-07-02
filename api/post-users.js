@@ -16,8 +16,8 @@ async function connectToDatabase(uri) {
 }
 
 module.exports = (req, res) => {
-    var myDB = connectDatabase(process.env.MONGODB_URI);
-    var myCollection = myDB.collection("Users");
+    var myDB = await connectDatabase(process.env.MONGODB_URI);
+    var myCollection = await myDB.collection("Users");
     myCollection.insertOne(req.body, (err, result) => {
         if(err) return console.log(err);
         res.json(result);
