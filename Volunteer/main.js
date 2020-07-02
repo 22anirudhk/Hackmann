@@ -1,4 +1,4 @@
-var getURL = "https://kommunity.vercel.app/api/vercel.js/";
+var getURL = "GOOGLE CLOUD URL";
 
 
 class Card {
