@@ -3,3 +3,5 @@ node_modules/
 api/node.js
 server.cert
 server.key
+
+.env
