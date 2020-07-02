@@ -35,7 +35,7 @@ function requestHelp() {
     
     var username = localStorage["username"];
     
-    console.log("Fetching from " + getUsersURL + username);
+    console.log("Fetching from " + getUsersURL);
     
     fetch(getUsersURL, {
         method: 'get',
