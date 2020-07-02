@@ -28,25 +28,15 @@ function postCard(jsonCard) {
 }
 
 
-function requestHelp() {
+async function requestHelp() {
     var taskStr = document.getElementById("task").value;
     var dateStr = document.getElementById("date").value;
     var timeStr = document.getElementById("time").value;
     
     var username = localStorage["username"];
-    
-    console.log("Fetching from " + getUsersURL);
-    
-    fetch(getUsersURL, {
-        method: 'get',
-        body:JSON.stringify(username)
-    })
-    .then(response => response.json())
-    .then(json => {
+  
     
     
-    
-    console.log(json);
     if(taskStr == null || dateStr == null || timeStr == null) {
         return;
     }
@@ -59,13 +49,12 @@ function requestHelp() {
         name: localStorage["name"]
     }
     console.log(JSONVersion);
-    postCard(JSONVersion);
+    await postCard(JSONVersion);
 
     var requestedNode = document.createElement("h3");
     requestedNode.innerHTML = "Requested. Return to the volunteer page to verify."
     document.getElementById("request-div").appendChild(requestedNode);
         
-    })
 }
 
 document.getElementById("request-button").addEventListener("click", requestHelp);

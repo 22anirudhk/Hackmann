@@ -120,10 +120,13 @@ function getCards() {
     var cardsArr = fetch(getTasksURL)
     .then(response => response.json())
     .then(json => {
-        
-        for(var i = 0; i < json.length; i++) {
+        console.log(json);
+        for(var i = 0; i < json.tasks.length; i++) {
             //Element in Json array of tasks
-            var el = json.tasks[i];
+            var tasks = json.tasks;
+            var el = tasks[i];
+            console.log(el);
+            console.log(el);
             addCard(el);
             console.log(el.task);
         }

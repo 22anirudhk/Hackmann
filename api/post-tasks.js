@@ -14,11 +14,10 @@ async function connectToDatabase(uri) {
     return db;
 }
 
-module.exports = (req, res) => {
-    var myDB = await connectDatabase(process.env.MONGODB_URI);
-    var myCollection = await myDB.collections("Tasks");
+module.exports = async (req, res) => {
+    var myDB = await connectToDatabase(process.env.MONGODB_URI);
     
-    myCollection.insertOne(req.body, (err, result) => {
+    myDB.collection("Tasks").insertOne(req.body, (err, result) => {
         if(err) return console.log(err);
         
         res.json(result);
