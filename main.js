@@ -1,5 +1,5 @@
-var getUsersURL = "kommunity.vercel.app/api/users.js";
-var postUsersURL = "kommunity.vercel.app/api/post-users.js";
+var getUsersURL = "api/users.js";
+var postUsersURL = "api/post-users.js";
 
 function login() {
     var username = document.getElementById("sign-in-username").value;

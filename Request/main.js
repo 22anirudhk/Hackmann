@@ -1,5 +1,5 @@
-var postTasksURL = "kommunity.vercel.app/api/post-tasks.js";
-var getUsersURL = "kommunity.vercel.app/api/users.js";
+var postTasksURL = "api/post-tasks.js";
+var getUsersURL = "api/users.js";
 
 
 document.getElementById("request-page-button").addEventListener("click", function() {
