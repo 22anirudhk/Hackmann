@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
     var myDb = await connectDatabase(process.env.MONGODB_URI);
     var myCollection = await myDb.collection("Users");
     
-    var users = await myCollection.find({ }).toArray();
+    var users = await myCollection.find({username: req.body.user }).toArray();
     res.status(200).json({ users });
 }
 
