@@ -2,7 +2,7 @@
   "name": "Kommunity",
   "version": 2,
   "env": {
-    "MONGODB_URI": "@my_mongodb_uri"
+    "MONGODB_URI": "@mongo-uri"
   }
   
 } 
