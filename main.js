@@ -1,11 +1,11 @@
-var getURL = "kommunity.vercel.app/api/users.js";
-var postURL = "kommunity.vercel.app/api/post-users.js";
+var getUsersURL = "kommunity.vercel.app/api/users.js";
+var postUsersURL = "kommunity.vercel.app/api/post-users.js";
 
 function login() {
     var username = document.getElementById("sign-in-username").value;
     var password = document.getElementById("sign-in-password").value;
     
-    var cardsArr = fetch(getURL, {
+    var cardsArr = fetch(getUsersURL, {
         method: 'get',
         body:JSON.stringify(username)
     })
@@ -49,7 +49,7 @@ function signup() {
     localStorage["name"] = name;
     localStorage["location"] = location;
     
-    fetch(postURL, {
+    fetch(postUsersURL, {
         method: 'post',
         body:JSON.stringify(jsonCard),
         headers: {"Content-Type" : "application/json"}
