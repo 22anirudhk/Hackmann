@@ -1,5 +1,5 @@
-var postTasksURL = "api/post-tasks.js";
-var getUsersURL = "api/users.js";
+var postTasksURL = "../api/post-tasks.js";
+var getUsersURL = "../api/users.js";
 
 
 document.getElementById("request-page-button").addEventListener("click", function() {
