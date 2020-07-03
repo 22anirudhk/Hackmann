@@ -1,12 +1,7 @@
-var getTasksURL = "/api/tasks.js";
-
-
-class Card {
-    constructor(task, date, time) {
-        this.task = task;
-        this.date = date;
-        this.time = time;
-    }
+//Variable set to "None" upon logout.
+if(localStorage["location"] == null || localStorage["name"] == null || localStorage["name"] == null 
+    || localStorage["location"] == "None" || localStorage["name"] == "None" || localStorage["name"] == "None" ) {
+    window.location.href = "../index.html";
 }
 
 document.getElementById("website-name").addEventListener("click", function(){
@@ -22,7 +17,27 @@ document.getElementById("volunteer-button").addEventListener("click", function()
     window.location.href = "../Volunteer/index.html";
 });
 
+document.getElementById("log-out-button").addEventListener("click", function() {
+    localStorage["username"] = "None";
+    localStorage["name"] = "None";
+    localStorage["location"] = "None";
+    
+    window.location.href = "../index.html";
+});
+
 document.getElementById("name").innerHTML = localStorage["name"];
+
+
+var getTasksURL = "/api/tasks.js";
+
+
+class Card {
+    constructor(task, date, time) {
+        this.task = task;
+        this.date = date;
+        this.time = time;
+    }
+}
 
 var card = new Card("Gardening", "6/25", "5:00pm");
 

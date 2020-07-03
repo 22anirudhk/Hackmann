@@ -46,11 +46,15 @@ body {
     margin-right:auto;
 }
 
+#log-out-button {
+    background-color:indianred;
+}
+
 
 #profile-div {
     
-    color:white;
-    background-color:lightgray;
+    color:black;
+    background-color:white;
     
     width:max-content;
     height:min-content;
@@ -68,7 +72,7 @@ body {
     flex-direction:column;
 }
 
-
+/* ENDING TOP BAR */
 
 
 

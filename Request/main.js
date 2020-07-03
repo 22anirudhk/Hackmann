@@ -1,8 +1,11 @@
-var postTasksURL = "/api/post-tasks.js";
-var getUsersURL = "/api/users.js";
+//Variable set to "None" upon logout.
+if(localStorage["location"] == null || localStorage["name"] == null || localStorage["name"] == null 
+    || localStorage["location"] == "None" || localStorage["name"] == "None" || localStorage["name"] == "None" ) {
+    window.location.href = "../index.html";
+}
 
 
-document.getElementById("request-page-button").addEventListener("click", function() {
+document.getElementById("request-button").addEventListener("click", function() {
     window.location.href = "../Request/index.html";
 });
 
@@ -14,8 +17,21 @@ document.getElementById("website-name").addEventListener("click", function(){
     window.location.href = "../index.html";
 });
 
+document.getElementById("log-out-button").addEventListener("click", function() {
+    localStorage["username"] = "None";
+    localStorage["name"] = "None";
+    localStorage["location"] = "None";
+    
+    window.location.href = "../index.html";
+});
+
 document.getElementById("name").innerHTML = localStorage["name"];
 
+
+
+
+var postTasksURL = "/api/post-tasks.js";
+var getUsersURL = "/api/users.js";
 
 
 function postCard(jsonCard) {
@@ -57,4 +73,4 @@ async function requestHelp() {
         
 }
 
-document.getElementById("request-button").addEventListener("click", requestHelp);
+document.getElementById("request-task-button").addEventListener("click", requestHelp);
