@@ -1,0 +1,13 @@
+/* Styling for the top message below the navbar */
+
+#message-div {
+    margin-top:25px;
+    display:flex;
+    width:100%;
+    
+    justify-content:center;
+}
+
+#message{
+    font-weight:500;
+}

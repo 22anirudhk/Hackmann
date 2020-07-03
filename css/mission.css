@@ -1,0 +1,20 @@
+/* Styling for the mission statement. */
+
+#mission-div {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+}
+
+#mission-description-header {
+    font-size:30px;
+}
+
+#mission-description {
+    font-size:22px;
+} 
+
+#get-started-header {
+    font-size:30px;
+}
+

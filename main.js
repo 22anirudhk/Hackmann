@@ -1,10 +1,10 @@
 var getUsersURL = "api/users.js";
 var postUsersURL = "api/post-users.js";
 
-//So that login cookie is reset upon entering this page.
+//Resets login session upon entering home page.
 document.cookie = "CrewCentreSession" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
-
+/* Logs a user in if the login form is valid. */
 function login() {
     var username = document.getElementById("sign-in-username").value;
     var password = document.getElementById("sign-in-password").value;
@@ -26,9 +26,8 @@ function login() {
             localStorage["username"] = obj.body.username;
             localStorage["name"] = obj.body.name;
             localStorage["location"] = obj.body.location;
-            
-            // Put this in your login function, just before the redirect
-            var sessionTimeout = 1; //hours
+
+            var sessionTimeout = 1; //Number of ours before session timeout
             var loginDuration = new Date();
             loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
             
@@ -47,13 +46,15 @@ function login() {
     });
 }
 
+//Initiates sign-in process
 document.getElementById("sign-in").addEventListener("click", login);
 
-
+//Returns user to home page
 document.getElementById("website-name").addEventListener("click", function(){
     window.location.href = "../index.html";
 });
 
+/* Signs a User Up and Redirects to Volunteer Page. */
 function signup() {
     var username = document.getElementById("username").value;
     

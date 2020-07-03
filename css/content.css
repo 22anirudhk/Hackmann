@@ -1,0 +1,45 @@
+/* Styling for the cards on the landing page */
+
+
+
+#content-div {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    
+    padding:50px;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    
+    width:700px;
+    height:max-content;
+    
+    margin:50px;
+    
+    color:#D1CCCC; /*Light gray*/
+    
+    border-color:black;
+    border-width:2px;
+    border-radius:20px;
+    
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top:20px;
+    padding-bottom:30px;
+    
+    font-size:24px;
+}
+
+
+#sign-up {
+    font-size:30px;
+    color:black;
+    font-weight:400;
+}

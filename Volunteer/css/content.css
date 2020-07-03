@@ -1,0 +1,35 @@
+/* Styling for content area and cards. */
+
+#content-div {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    
+    padding-top:170px; /*MAKE SURE ITS SAME AS TOP BAR WIDTH (including padding) */
+}
+
+.card {
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    
+    width:max-content;
+    height:max-content;
+    
+    margin:50px;
+    
+    color:#D1CCCC; /*Light gray*/
+    
+    border-color:black;
+    border-width:2px;
+    border-radius:20px;
+    
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top:20px;
+    padding-bottom:30px;
+    
+    font-size:24px;
+}

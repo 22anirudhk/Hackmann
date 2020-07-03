@@ -1,0 +1,64 @@
+/* Styling for the top bar */
+
+#top-div {
+    position:fixed;
+    z-index:1;
+    height:90px;
+    width:100%;
+    
+    background: rgb(95,1,232);
+    background: linear-gradient(90deg, rgba(95,1,232,1) 0%, rgba(95,1,232,1) 47%, rgba(0,212,255,1) 100%);
+    
+    padding:40px;
+    
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    
+}
+
+#website-name-div {
+    display:flex;
+}
+
+#website-name {
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+}
+
+#function-buttons{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#log-out-button {
+    background-color:indianred;
+}
+
+
+#profile-div {
+    
+    color:black;
+    background-color:white;
+    
+    width:max-content;
+    height:min-content;
+    max-height:90px;
+    
+    
+    border-radius:10px;
+    padding:30px;
+    
+    margin-right:50px;
+    
+        
+    
+    display:flex;
+    flex-direction:column;
+}
+
+/* Ending Top Div */

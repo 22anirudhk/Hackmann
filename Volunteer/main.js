@@ -1,20 +1,27 @@
+/* Redirect if the session is not valid. */
 if (document.cookie.indexOf("CrewCentreSession=Valid") == -1) {
   location.href = "../index.html";
 }
 
+/* Redirect to Request page if button pressed. */
+document.getElementById("request-button").addEventListener("click", function() {
+    window.location.href = "../Request/index.html";
+});
+
+
+/* Redirect to Volunteer page if button pressed. */
+document.getElementById("volunteer-button").addEventListener("click", function() {
+    window.location.href = "../Volunteer/index.html";
+});
+
+
+/* Redirect to landing page if title pressed. */
 document.getElementById("website-name").addEventListener("click", function(){
     window.location.href = "../index.html";
 });
 
 
-document.getElementById("request-button").addEventListener("click", function() {
-    window.location.href = "../Request/index.html";
-});
-
-document.getElementById("volunteer-button").addEventListener("click", function() {
-    window.location.href = "../Volunteer/index.html";
-});
-
+/* Log a user out. */
 document.getElementById("log-out-button").addEventListener("click", function() {
     localStorage["username"] = "None";
     localStorage["name"] = "None";
@@ -24,12 +31,13 @@ document.getElementById("log-out-button").addEventListener("click", function() {
     window.location.href = "../index.html";
 });
 
+/* Set the name in the profile div */
 document.getElementById("name").innerHTML = localStorage["name"];
 
 
 var getTasksURL = "/api/tasks.js";
 
-
+/* Representation of a request for assistance with a task */
 class Card {
     constructor(task, date, time) {
         this.task = task;
@@ -38,9 +46,10 @@ class Card {
     }
 }
 
+/* Test card */
 var card = new Card("Gardening", "6/25", "5:00pm");
 
-
+/* Adds a card to the content area. */
 function addCard(myCard) {
     
     var cardEl = document.createElement("div")
@@ -76,7 +85,7 @@ function addCard(myCard) {
        }
     }
     
-    
+
     //First column items
     var task = document.createElement("h4");
     task.innerHTML = myCard.task;
@@ -108,26 +117,11 @@ function addCard(myCard) {
     var date = document.createElement("h4");
     date.innerHTML = myCard.date;
     column3[3].appendChild(date);
-    
-    
-    
-//    var col1 = document.createElement("td");      
-//        var val1 = document.createElement("h4");
-//        val1.innerHTML = attr[i];
-//        val1.style.color = "black";
-//        col1.appendChild(val1);
-//        row.appendChild(col1);
-    
-    
-        
-    
-    
 
-    
     document.getElementById("content-div").appendChild(cardEl);
 }
 
-
+/* Gets the cards from the database and adds to the content area */
 function getCards() {
     document.getElementById("content-div").innerHTML = "";
     console.log(getTasksURL);
