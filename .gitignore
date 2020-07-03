@@ -5,3 +5,5 @@ server.cert
 server.key
 
 .env
+
+.vercel/
