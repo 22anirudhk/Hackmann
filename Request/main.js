@@ -1,7 +1,5 @@
-//Variable set to "None" upon logout.
-if(localStorage["location"] == null || localStorage["name"] == null || localStorage["name"] == null 
-    || localStorage["location"] == "None" || localStorage["name"] == "None" || localStorage["name"] == "None" ) {
-    window.location.href = "../index.html";
+if (document.cookie.indexOf("CrewCentreSession=Valid") == -1) {
+  location.href = "../index.html";
 }
 
 

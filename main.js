@@ -22,6 +22,13 @@ function login() {
             localStorage["username"] = obj.body.username;
             localStorage["name"] = obj.body.name;
             localStorage["location"] = obj.body.location;
+            
+            // Put this in your login function, just before the redirect
+            var sessionTimeout = 1; //hours
+            var loginDuration = new Date();
+            loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
+            document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
+            
             window.location.href = "Volunteer/index.html";
         }
     })
