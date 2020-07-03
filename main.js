@@ -1,6 +1,10 @@
 var getUsersURL = "api/users.js";
 var postUsersURL = "api/post-users.js";
 
+//So that login cookie is reset upon entering this page.
+document.cookie = "CrewCentreSession" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
+
 function login() {
     var username = document.getElementById("sign-in-username").value;
     var password = document.getElementById("sign-in-password").value;
@@ -27,8 +31,8 @@ function login() {
             var sessionTimeout = 1; //hours
             var loginDuration = new Date();
             loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
-            document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
             
+            document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
             window.location.href = "Volunteer/index.html";
         }
     })

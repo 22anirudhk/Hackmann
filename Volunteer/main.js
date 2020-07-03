@@ -20,6 +20,7 @@ document.getElementById("log-out-button").addEventListener("click", function() {
     localStorage["name"] = "None";
     localStorage["location"] = "None";
     
+    document.cookie = "CrewCentreSession" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     window.location.href = "../index.html";
 });
 
