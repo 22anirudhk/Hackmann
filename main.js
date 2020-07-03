@@ -81,6 +81,9 @@ function signup() {
         headers: {"Content-Type" : "application/json"}
     })
     .then(response => response.json())
+    
+    var sessionTimeout = 1; //hours
+            var loginDuration = new Date();
     document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
     window.location.href = "Volunteer/index.html";
 }
