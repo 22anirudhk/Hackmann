@@ -24,6 +24,11 @@ input {
     height:30px;
     font-size:20px;
     color:gray;
+
+    padding-left:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    Outline: none;
 }
 
 .submit-button {

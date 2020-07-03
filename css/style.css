@@ -34,6 +34,11 @@ input {
     color:gray;
     
     font-family:Lato;
+
+    padding-left:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    Outline: none;
 }
 
 .submit-button{
