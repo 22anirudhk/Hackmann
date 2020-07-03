@@ -8,6 +8,7 @@ body {
     height:100%;
     font-family: "Lato";
     margin:0px;
+    overflow-x:hidden;
 }
 
 /*TOP DIV */
@@ -88,6 +89,24 @@ body {
 
     
     padding:50px;
+}
+
+#mission-div {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+}
+
+#mission-description-header {
+    font-size:30px;
+}
+
+#mission-description {
+    font-size:22px;
+}
+
+#get-started-header {
+    font-size:30px;
 }
 
 
