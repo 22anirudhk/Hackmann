@@ -78,7 +78,7 @@ async function requestHelp() {
     var requestedNode = document.createElement("h3");
     requestedNode.innerHTML = "Requested. Return to the volunteer page to verify."
     document.getElementById("request-div").appendChild(requestedNode);
-        
+    window.location.href = "../Volunteer/index.html";
 }
 
 /* Add request for assistance to database upon button press */
