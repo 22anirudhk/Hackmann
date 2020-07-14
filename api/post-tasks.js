@@ -17,9 +17,13 @@ async function connectToDatabase(uri) {
 module.exports = async (req, res) => {
     var myDB = await connectToDatabase(process.env.MONGODB_URI);
     
-    myDB.collection("Tasks").insertOne(req.body, (err, result) => {
-        if(err) return console.log(err);
+    if(req.body.task.length <= 1 || req.body.length <= 1 || req.body.length <= 1) {
+        res.status(403).send("invalid");
+    } else {
+        myDB.collection("Tasks").insertOne(req.body, (err, result) => {
+            if(err) return console.log(err);
         
-        res.json(result);
-    })
+            res.status(200).send("Inserted.");
+        })
+    }
 }

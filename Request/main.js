@@ -48,7 +48,12 @@ function postCard(jsonCard) {
         body:JSON.stringify(jsonCard),
         headers: {"Content-Type" : "application/json"}
     })
-    .then(response => response.json())
+    .then(r =>  r.json().then(data => ({status: r.status, body: data})))
+    .then((obj) => {
+        console.log(obj)
+//        if(obj.status == 403) {
+            
+    })
 }
 
 /* Creates a json version of the request for assistance and adds to database. */
@@ -59,7 +64,6 @@ async function requestHelp() {
     
     var username = localStorage["username"];
   
-    
     
     if(taskStr == null || dateStr == null || timeStr == null) {
         return;
