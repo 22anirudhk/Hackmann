@@ -4,5 +4,4 @@
   "env": {
     "MONGODB_URI": "@my-mongodb-uri"
   }
-  
 }

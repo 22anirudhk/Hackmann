@@ -32,7 +32,7 @@ function login() {
             loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
             
             document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-            window.location.href = "Volunteer/index.html";
+            window.location.href = "/Volunteer";
         }
     })
     .catch((error) => {
@@ -51,7 +51,7 @@ document.getElementById("sign-in").addEventListener("click", login);
 
 //Returns user to home page
 document.getElementById("website-name").addEventListener("click", function(){
-    window.location.href = "../index.html";
+    window.location.href = "/";
 });
 
 /* Signs a User Up and Redirects to Volunteer Page. */
@@ -86,7 +86,7 @@ function signup() {
     var sessionTimeout = 1; //hours
             var loginDuration = new Date();
     document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-    window.location.href = "Volunteer/index.html";
+    window.location.href = "Volunteer";
 }
 
 document.getElementById("sign-up-button").addEventListener("click", signup);

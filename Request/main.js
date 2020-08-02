@@ -1,23 +1,23 @@
 /* Redirect if the session is not valid. */
 if (document.cookie.indexOf("CrewCentreSession=Valid") == -1) {
-  location.href = "../index.html";
+  location.href = "/";
 }
 
 /* Redirect to Request page if button pressed. */
 document.getElementById("request-button").addEventListener("click", function() {
-    window.location.href = "../Request/index.html";
+    window.location.href = "/Request";
 });
 
 
 /* Redirect to Volunteer page if button pressed. */
 document.getElementById("volunteer-button").addEventListener("click", function() {
-    window.location.href = "../Volunteer/index.html";
+    window.location.href = "/Volunteer";
 });
 
 
 /* Redirect to landing page if title pressed. */
 document.getElementById("website-name").addEventListener("click", function(){
-    window.location.href = "../index.html";
+    window.location.href = "/";
 });
 
 
@@ -28,7 +28,7 @@ document.getElementById("log-out-button").addEventListener("click", function() {
     localStorage["location"] = "None";
     
     document.cookie = "CrewCentreSession" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    window.location.href = "../index.html";
+    window.location.href = "/";
 });
 
 /* Set the name in the profile div */
@@ -82,7 +82,7 @@ async function requestHelp() {
     var requestedNode = document.createElement("h3");
     requestedNode.innerHTML = "Requested. Return to the volunteer page to verify."
     document.getElementById("request-div").appendChild(requestedNode);
-    window.location.href = "../Volunteer/index.html";
+    window.location.href = "/Volunteer";
 }
 
 /* Add request for assistance to database upon button press */
