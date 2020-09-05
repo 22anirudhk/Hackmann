@@ -15,8 +15,8 @@ Find it on https://kommunity.vercel.app/
 ## What's Next?
 - Fix user interface to fit more devices, have profile pictures, make it more responsive, look better in general.
 - Possibly implement Google OAuth.
-- Use React.JS for the cards instead of regular JS.
-- Suggest suggested volunteer opportunities by location and date.
+- Transition to React.js
+- Suggest volunteer opportunities by location and date.
 - Remove accepted tasks from database.
 
 
