@@ -75,6 +75,7 @@ function signup() {
     localStorage["username"] = username;
     localStorage["name"] = name;
     localStorage["location"] = location;
+    window.location.href = "/Volunteer";
     
     fetch(postUsersURL, {
         method: 'post',
@@ -85,8 +86,8 @@ function signup() {
     .then((obj) => {
         var sessionTimeout = 1; //hours
         var loginDuration = new Date();
-document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-window.location.href = "/Volunteer";
+        document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
+        window.location.href = "/Volunteer";
     })
     .catch((error) => {
         //invalid credentials entered
