@@ -1,22 +1,27 @@
 /* CSS for the Top navbar */
 
 #top-div {
-    height:90px;
-    width:100%;
-    
-    background: rgb(95,1,232);
-    background: linear-gradient(90deg, rgba(95,1,232,1) 0%, rgba(95,1,232,1) 47%, rgba(0,212,255,1) 100%);
-    
-    padding:40px;
+  height: 90px;
+  width: 100%;
+
+  background: rgb(95, 1, 232);
+  background: linear-gradient(
+    90deg,
+    rgba(95, 1, 232, 1) 0%,
+    rgba(95, 1, 232, 1) 47%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  padding: 40px;
 }
 
 #website-name-div {
-    display:flex;
-    margin-left:100px;
+  display: flex;
+  margin-left: 100px;
 }
 
 #website-name {
-    font-size:50px;
-    color:white;
-    cursor:pointer;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
 }
