@@ -81,12 +81,18 @@ function signup() {
         body:JSON.stringify(jsonCard),
         headers: {"Content-Type" : "application/json"}
     })
-    .then(response => response.json())
+    .then(r =>  r.json().then(data => ({status: r.status, body: data})))
+    .then((obj) => {
+        var sessionTimeout = 1; //hours
+        var loginDuration = new Date();
+document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
+window.location.href = "Volunteer";
+    })
+    .catch((error) => {
+        //invalid credentials
+    });
     
-    var sessionTimeout = 1; //hours
-            var loginDuration = new Date();
-    document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-    window.location.href = "Volunteer";
+   
 }
 
 document.getElementById("sign-up-button").addEventListener("click", signup);
