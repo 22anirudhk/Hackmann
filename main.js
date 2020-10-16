@@ -86,7 +86,7 @@ function signup() {
         var sessionTimeout = 1; //hours
         var loginDuration = new Date();
 document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-window.location.href = "Volunteer";
+window.location.href = "/Volunteer";
     })
     .catch((error) => {
         //invalid credentials entered
