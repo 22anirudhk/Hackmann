@@ -89,7 +89,7 @@ document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; pat
 window.location.href = "Volunteer";
     })
     .catch((error) => {
-        //invalid credentials
+        //invalid credentials entered
     });
     
    

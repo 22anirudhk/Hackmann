@@ -20,10 +20,11 @@ module.exports = async (req, res) => {
     if(req.body.username == "" || req.body.password == "" || req.body.location == "" || req.body.name == "") {
         res.status(403).send("invalid");
     }
-    
-    myDB.collection("Users").insertOne(req.body, (err, result) => {
-        if(err) return console.log(err);
-        
-        res.status(200).send("Inserted.");
-    })
+    else {
+        myDB.collection("Users").insertOne(req.body, (err, result) => {
+            if(err) return console.log(err);
+            
+            res.status(200).send("Inserted.");
+        })
+    }
 }
