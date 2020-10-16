@@ -1,75 +1,95 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title> </title>
-        <link rel = "stylesheet" type = "text/css" href = "css/style.css">
-        <link rel = "stylesheet" type = "text/css" href = "css/top-bar.css">
-        <link rel = "stylesheet" type = "text/css" href = "css/message.css">
-        <link rel = "stylesheet" type = "text/css" href = "css/mission.css">
-        <link rel = "stylesheet" type = "text/css" href = "css/content.css">
-    </head>
-    <body>
-        <div id = "everything">
-            <div id = "top-div"> 
-                <div id = "website-name-div">
-                    <h1 id = "website-name">KOMMUNITY</h1>
-                </div>
-            </div>
-            <div id = "message-div">
-                <h1 id = "message">Request Help. Help Others. Support Your Community.</h1>
-            </div>
-            <div id = "content-div" > 
-                <div class = "card" id = "sign-up-div">
-                    <h2 id = "sign-up">Sign Up</h2>
-                    <table>
-                        <tr>
-                            <td><h4>Name</h4></td> 
-                            <td> <input type = "text" id = "name"> </td>
-                        </tr>
-                        <tr>
-                            <td><h4>Location</h4></td> 
-                            <td> <input type = "text" id = "location"> </td>
-                        </tr>
-                        <tr>
-                            <td><h4>Username</h4></td> 
-                            <td> <input type = "text" id = "username"> </td>
-                        </tr>
-                        <tr>
-                            <td><h4>Password</h4></td> 
-                            <td> <input type = "text" id = "password"> </td>
-                        </tr>
-                    </table>
-                    <input type = "submit" value = "Sign Up" class = "submit-button" id = "sign-up-button">
-                </div>
-                <div class = "card" id = "sign-in-div">
-                    <h2 id = "sign-up">Sign In</h2>
-                    <table>
-                        <tr>
-                            <td><h4>Username</h4></td> 
-                            <td> <input type = "text" id = "sign-in-username"> </td>
-                        </tr>
-                        <tr>
-                            <td><h4>Password</h4></td> 
-                            <td> <input type = "text" id = "sign-in-password"> </td>
-                        </tr>
-                    </table>
-                    <input type = "submit" class = "submit-button" value = "Sign In" id = "sign-in">
-                </div>
-                <div id = 'mission-div'>
-                    <h2 id = "mission-description-header">What is Kommunity?</h2>
-                    <h4 id = "mission-description">Kommunity is a platform for social good. It allows individuals to volunteer to fulfill a request for help from someone nearby. This could range from picking up groceries to carrying furniture and gardening--The list goes on!</h4>
-                    <h2 id = "get-started-header">Sign Up to Get Started!</h2>
-                </div>
-            </div>
-            <div id = "footer-div">
-            <footer id = "footer">
-            <span id = "footer-message">Made with &lt;/&gt; by </span>
-            <a id = "footer-link" href="https://github.com/22anirudhk">22anirudhk</a>
+  <head>
+    <title> </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/top-bar.css" />
+    <link rel="stylesheet" type="text/css" href="css/message.css" />
+    <link rel="stylesheet" type="text/css" href="css/mission.css" />
+    <link rel="stylesheet" type="text/css" href="css/content.css" />
+  </head>
+  <body>
+    <div id="everything">
+      <div id="top-div">
+        <div id="website-name-div">
+          <h1 id="website-name">KOMMUNITY</h1>
+        </div>
+      </div>
+      <div id="message-div">
+        <h1 id="message">Request Help. Help Others. Support Your Community.</h1>
+      </div>
+      <div id="content-div">
+        <div class="card" id="sign-up-div">
+          <h2 id="sign-up">Sign Up</h2>
+          <table>
+            <tr>
+              <td><h4>Name</h4></td>
+              <td><input type="text" id="name" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <td><h4>Location</h4></td>
+              <td><input type="text" id="location" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <td><h4>Username</h4></td>
+              <td><input type="text" id="username" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <td><h4>Password</h4></td>
+              <td><input type="text" id="password" autocomplete="off" /></td>
+            </tr>
+          </table>
+          <input
+            type="submit"
+            value="Sign Up"
+            class="submit-button"
+            id="sign-up-button"
+          />
+        </div>
+        <div class="card" id="sign-in-div">
+          <h2 id="sign-up">Sign In</h2>
+          <table>
+            <tr>
+              <td><h4>Username</h4></td>
+              <td>
+                <input type="text" id="sign-in-username" autocomplete="off" />
+              </td>
+            </tr>
+            <tr>
+              <td><h4>Password</h4></td>
+              <td>
+                <input type="text" id="sign-in-password" autocomplete="off" />
+              </td>
+            </tr>
+          </table>
+          <input
+            type="submit"
+            class="submit-button"
+            value="Sign In"
+            id="sign-in"
+          />
+        </div>
+        <div id="mission-div">
+          <h2 id="mission-description-header">What is Kommunity?</h2>
+          <h4 id="mission-description">
+            Kommunity is a platform for social good. It allows individuals to
+            volunteer to fulfill a request for help from someone nearby. This
+            could range from picking up groceries to carrying furniture and
+            gardening--The list goes on!
+          </h4>
+          <h2 id="get-started-header">Sign Up to Get Started!</h2>
+        </div>
+      </div>
+      <div id="footer-div">
+        <footer id="footer">
+          <span id="footer-message">Made with &lt;/&gt; by </span>
+          <a id="footer-link" href="https://github.com/22anirudhk"
+            >22anirudhk</a
+          >
         </footer>
-        </div>
-        </div>
-        
-    </body>
-    <script src = "main.js"></script>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
 </html>
