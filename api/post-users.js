@@ -17,7 +17,7 @@ async function connectToDatabase(uri) {
 module.exports = async (req, res) => {
     var myDB = await connectToDatabase(process.env.MONGODB_URI);
 
-    if(req.body.username == "" || req.body.password == "" || req.body.location == "" || req.body.name == "") {
+    if(req.body.username.length <= 1 || req.body.password <= 1 || req.body.location <= 1 || req.body.name <= 1) {
         res.status(403).send("invalid");
     }
     else {

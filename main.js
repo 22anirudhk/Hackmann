@@ -57,10 +57,6 @@ document.getElementById("website-name").addEventListener("click", function(){
 /* Signs a User Up and Redirects to Volunteer Page. */
 function signup() {
     var username = document.getElementById("username").value;
-    
-    
-    localStorage["username"] = username;
-    
     var name = document.getElementById("name").value;
     var location = document.getElementById("location").value;
     var password = document.getElementById("password").value;
@@ -82,10 +78,10 @@ function signup() {
         console.log(obj)
         if(obj.status == 200) {
             localStorage["username"] = username;
-        localStorage["name"] = name;
-        localStorage["location"] = location;
+            localStorage["name"] = name;
+            localStorage["location"] = location;
 
-            var sessionTimeout = 1; //Number of ours before session timeout
+            var sessionTimeout = 1; //Number of hours before session timeout
             var loginDuration = new Date();
             loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
             
