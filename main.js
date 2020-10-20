@@ -87,6 +87,7 @@ function signup() {
         var loginDuration = new Date();
         loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
         document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
+        console.log('here');
         window.location.href = "/Volunteer";
     })
     .catch((error) => {
