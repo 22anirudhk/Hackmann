@@ -74,3 +74,8 @@ input[type="text"]:focus {
   color: #6edd7f;
   background-color: white;
 }
+
+.submit-button:active {
+  transform: scale(0.9);
+}
+
