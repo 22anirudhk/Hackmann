@@ -79,20 +79,23 @@ function signup() {
     })
     .then(r =>  r.json().then(data => ({status: r.status, body: data})))
     .then((obj) => {
-        localStorage["username"] = username;
+        console.log(obj)
+        if(obj.status == 200) {
+            localStorage["username"] = username;
         localStorage["name"] = name;
         localStorage["location"] = location;
-        
-        var sessionTimeout = 1; //hours
-        var loginDuration = new Date();
-        loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
-        document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-        console.log('here');
-        window.location.href = "/Volunteer";
+
+            var sessionTimeout = 1; //Number of ours before session timeout
+            var loginDuration = new Date();
+            loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
+            
+            document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
+            window.location.href = "/Volunteer";
+        }
     })
     .catch((error) => {
-        //invalid credentials entered
     });
+    
     
    
 }
