@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
         myDB.collection("Users").insertOne(req.body, (err, result) => {
             if(err) return console.log(err);
             
-            res.status(200).send("Inserted.");
+            res.status(200).send({username: req.body.username, name: name, location: location});
         })
     }
 }

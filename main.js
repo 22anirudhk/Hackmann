@@ -75,11 +75,11 @@ function signup() {
     })
     .then(r =>  r.json().then(data => ({status: r.status, body: data})))
     .then((obj) => {
-        console.log(obj)
+        console.log(obj);
         if(obj.status == 200) {
-            localStorage["username"] = username;
-            localStorage["name"] = name;
-            localStorage["location"] = location;
+            localStorage["username"] = obj.body.username;
+            localStorage["name"] = obj.body.name;
+            localStorage["location"] = obj.body.location;
 
             var sessionTimeout = 1; //Number of hours before session timeout
             var loginDuration = new Date();
