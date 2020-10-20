@@ -17,14 +17,14 @@ async function connectToDatabase(uri) {
 module.exports = async (req, res) => {
     var myDB = await connectToDatabase(process.env.MONGODB_URI);
 
-    if(req.body.username.length <= 1 || req.body.password <= 1 || req.body.location <= 1 || req.body.name <= 1) {
+    if(req.body.username.length <= 1 || req.body.password.length <= 1 || req.body.location.length <= 1 || req.body.name.length <= 1) {
         res.status(403).send("invalid");
     }
     else {
         myDB.collection("Users").insertOne(req.body, (err, result) => {
             if(err) return console.log(err);
             
-            res.status(200).send({username: req.body.username, name: name, location: location});
+            res.status(200).send({username: req.body.username, name: req.body.name, location: req.body.location});
         })
     }
 }
