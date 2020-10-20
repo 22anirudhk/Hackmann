@@ -72,11 +72,6 @@ function signup() {
         name:name
     }
     
-    localStorage["username"] = username;
-    localStorage["name"] = name;
-    localStorage["location"] = location;
-    window.location.href = "/Volunteer";
-    
     fetch(postUsersURL, {
         method: 'post',
         body:JSON.stringify(jsonCard),
