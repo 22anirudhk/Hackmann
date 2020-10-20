@@ -51,6 +51,11 @@ input {
   background-color: white;
 }
 
+.submit-button:active {
+  transform: scale(0.9);
+}
+
+
 .page-button {
   background-color: #ad96ce;
   border-color: #ad96ce;
